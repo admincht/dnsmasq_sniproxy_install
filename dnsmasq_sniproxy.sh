@@ -231,8 +231,8 @@ install_dnsmasq(){
             error_detect_depends "yum -y install make"
             error_detect_depends "yum -y install gcc-c++"
             cd /tmp/
-            if [ -e dnsmasq-2.80 ]; then
-                rm -rf dnsmasq-2.80
+            if [ -e dnsmasq-2.86 ]; then
+                rm -rf dnsmasq-2.86
             fi
             download dnsmasq-2.86.tar.gz http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.86.tar.gz
             tar -zxf dnsmasq-2.86.tar.gz
