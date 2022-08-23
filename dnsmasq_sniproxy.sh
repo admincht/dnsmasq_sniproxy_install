@@ -234,16 +234,16 @@ install_dnsmasq(){
             if [ -e dnsmasq-2.80 ]; then
                 rm -rf dnsmasq-2.80
             fi
-            download dnsmasq-2.80.tar.gz http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.86.tar.gz
-            tar -zxf dnsmasq-2.80.tar.gz
-            cd dnsmasq-2.80
+            download dnsmasq-2.86.tar.gz http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.86.tar.gz
+            tar -zxf dnsmasq-2.86.tar.gz
+            cd dnsmasq-2.86
             make
             if [ $? -ne 0 ]; then
                 echo -e "[${red}Error${plain}] dnsmasq upgrade failed."
-                rm -rf /tmp/dnsmasq-2.80 /tmp/dnsmasq-2.80.tar.gz
+                rm -rf /tmp/dnsmasq-2.86 /tmp/dnsmasq-2.60.tar.gz
                 exit 1
             fi
-            yes|cp -f /tmp/dnsmasq-2.80/src/dnsmasq /usr/sbin/dnsmasq && chmod 755 /usr/sbin/dnsmasq
+            yes|cp -f /tmp/dnsmasq-2.86/src/dnsmasq /usr/sbin/dnsmasq && chmod 755 /usr/sbin/dnsmasq
         fi
     elif check_sys packageManager apt; then
         error_detect_depends "apt-get -y install dnsmasq"
@@ -270,7 +270,7 @@ install_dnsmasq(){
         systemctl restart dnsmasq
     fi
     cd /tmp
-    rm -rf /tmp/dnsmasq-2.80 /tmp/dnsmasq-2.80.tar.gz /tmp/proxy-domains.txt
+    rm -rf /tmp/dnsmasq-2.86 /tmp/dnsmasq-2.86.tar.gz /tmp/proxy-domains.txt
     echo -e "[${green}Info${plain}] dnsmasq install complete..."
 }
 
