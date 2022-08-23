@@ -234,7 +234,7 @@ install_dnsmasq(){
             if [ -e dnsmasq-2.80 ]; then
                 rm -rf dnsmasq-2.80
             fi
-            download dnsmasq-2.80.tar.gz http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.80.tar.gz
+            download dnsmasq-2.80.tar.gz http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.86.tar.gz
             tar -zxf dnsmasq-2.80.tar.gz
             cd dnsmasq-2.80
             make
